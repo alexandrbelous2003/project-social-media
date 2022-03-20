@@ -14,28 +14,28 @@
 
         <div class="sign-in-content-account" fxLayout="row" fxLayoutGap="4px">
             <span>Dont have account?</span>
-            <a href="#">sign-up</a>
+            <a href="/social/authentication/sign-up">sign-up</a>
         </div>
     </div>
     <div class="sign-in-content-form">
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 
             <mat-form-field color="primary" appearance="outline" class="matForm">
-                <mat-label>Логин</mat-label>
-                <input id="login" matInput required autofocus autocomplete="off" placeholder="Логин"
+                <mat-label>Login</mat-label>
+                <input id="login" matInput required autofocus autocomplete="off" 
                     formControlName="login" data-cy="loginName" />
-                <mat-error>Поле обязательное для заполнения</mat-error>
+                <mat-error>Email address is required</mat-error>
             </mat-form-field>
 
             <mat-form-field color="primary" appearance="outline" class="matForm">
-                <mat-label>Пароль</mat-label>
+                <mat-label>Password</mat-label>
                 <input matInput required autocomplete="off" [type]="hide ? 'password' : 'text'"
                     formControlName="password" data-cy="loginPassword" />
                 <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                     [attr.aria-pressed]="hide" type="button" mat-icon-button matSuffix>
                     <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </button>
-                <mat-error>Поле обязательное для заполнения</mat-error>
+                <mat-error>Password is required</mat-error>
             </mat-form-field>
 
             <div class="sign-in-content-forgot" fxLayout="row" fxLayoutAlign="space-between center">
